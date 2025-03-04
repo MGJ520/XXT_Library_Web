@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Segoe UI, Arial, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-image: url("./login_background.svg");
+}
+
+.login-box {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.login-form {
+    width: 440px;
+    background: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* animation: fadeIn 1s ease-out; */
+    transition: 0.25s;
+}
+
+
+.is-hidden {
+    display: none;
+    opacity: 0;
+    transition: 0.25s;
+}
+
+
+.logo {
+    max-width: 256px;
+    height: 24px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+/* 在 login_style.css 文件中添加以下样式 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.logo img {
+    animation-name: fadeIn;
+    animation-duration: 1.5s; /* 动画持续时间 */
+    animation-fill-mode: forwards; /* 保持动画结束状态 */
+}
+
+
+.header {
+    color: rgb(27, 27, 27);
+    line-height : 28px;
+    text-align: left;
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+.input-box input {
+    height: 36%;
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: #333 solid 1px;
+    outline: none;
+}
+
+.input-box input:focus {
+    border-bottom: #0078D7 solid 1px;
+}
+
+.row {
+    font-size: .8125rem;
+}
+
+a {
+    cursor: pointer;
+    box-sizing: border-box;
+    color: #0078D7;
+}
+
+a:hover {
+    color: #005EA5;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 按钮 */
+.btn-box button {
+    width: 108px;
+    height: 34px;
+
+    padding: 4px 12px;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #0078D7;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-box button:hover {
+    background-color: #005EA5;
+}
+
+/* 多平台适应 */
+@media (max-width: 540px) {
+    .login-form {
+        width: 100%;
+        height: 100vh;
+        transition: 0.25s;
+    }
+}
+
+
+.error {
+    margin-left: 20px;
+    font-size: small;
+    color: red;
+    display: none;
+}
+
+
+/* 动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

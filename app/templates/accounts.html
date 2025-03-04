@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Profile</title>
+    <script src="/accounts_script.js" defer></script>
+    <link rel="stylesheet" href="/accounts_style.css">
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<div class="top">
+    <p>个人信息</p>
+</div>
+<div class="card user-card info-show" id="userInfo">
+
+    <div class="user-card-item">
+        <h2>用户信息</h2>
+    </div>
+
+    <div class="user-card-inner">
+
+        <div class="user-card-item">
+            <label>昵称</label>
+            <p id="platformNickname"></p>
+        </div>
+
+        <div class="user-card-item">
+            <label>邮箱</label>
+            <p id="platformEmail"></p>
+        </div>
+
+        <div class="user-card-item">
+            <label>类型</label>
+            <p id="permissionLevel"></p>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="card user-card info-show" id="loginInfo">
+    <div class="user-card-item">
+        <h2>登录信息</h2>
+    </div>
+
+    <div class="user-card-inner">
+
+        <div class="user-card-item">
+            <label>上次登录时间</label>
+            <p id="lastLoginTime"></p>
+        </div>
+
+        <div class="user-card-item">
+            <label>上次登录IP</label>
+            <p id="latestLoginIp"></p>
+        </div>
+
+        <div class="user-card-item">
+            <label>登录次数</label>
+            <p id="loginCount"></p>
+        </div>
+
+        <div class="user-card-item">
+            <label>登录失败次数</label>
+            <p id="loginFailureCount"></p>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="card user-card info-show">
+
+    <div class="user-card-item">
+        <h2>更新信息</h2>
+    </div>
+    <div class="user-card-inner">
+
+        <div class="user-card-item">
+            <label for="nickname">新的昵称:</label>
+            <input type="text" id="nickname" name="nickname" required>
+        </div>
+
+        <div class="user-card-item">
+            <label for="password">新的密码:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="user-card-item">
+            <label for="confirm-password">确认密码:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+
+        <div class="user-card-item">
+            <input type="button" value="上传设置" id="updateSettingsBtn">
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+</script>
+
+</body>
+</html>
+

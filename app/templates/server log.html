@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/server_log.css">
+    <title>System Monitor</title>
+</head>
+
+<body>
+<div class="top">
+    <p>服务与管理</p>
+</div>
+<div class="card sys-card">
+    <h1>System Monitor</h1>
+    <div class="sys-info">
+        <h3>CPU Information</h3>
+        <p>CPU Usage: <span id="cpu_usage">Loading...</span>%</p>
+        <p>CPU Count: <span id="cpu_count">Loading...</span></p>
+    </div>
+    <div class="sys-info">
+        <h3>Memory Information</h3>
+        <p>Memory Usage: <span id="memory_percent">Loading...</span>%</p>
+        <p>Total Memory: <span id="total_memory">Loading...</span> GB</p>
+        <p>Free Memory: <span id="free_memory">Loading...</span> GB</p>
+    </div>
+    <div class="sys-info">
+        <h3>Network Information</h3>
+        <p>Network Sent: <span id="network_sent">Loading...</span> MB/s</p>
+        <p>Network Received: <span id="network_recv">Loading...</span> MB/s</p>
+    </div>
+
+</div>
+
+<div class="card sys-card">
+    <div class="processes">
+        <h3>Top 10 Processes</h3>
+        <div id="process_list"></div>
+    </div>
+</div>
+
+
+<script>
+    // 定义一个函数来更新系统信息
+    async function updateSystemInfo() {
+        try {
+            const response = await fetch('/api/get/system_info');
+            const data = await response.json();
+
+            // 更新 CPU 信息
+            document.getElementById('cpu_usage').textContent = data.cpu_usage.toFixed(2);
+            document.getElementById('cpu_count').textContent = data.cpu_count;
+
+            // 更新内存信息
+            document.getElementById('memory_percent').textContent = data.memory_percent.toFixed(2);
+            document.getElementById('total_memory').textContent = data.total_memory.toFixed(2);
+            document.getElementById('free_memory').textContent = data.free_memory.toFixed(2);
+
+            // 更新网络信息
+            document.getElementById('network_sent').textContent = data.network_sent.toFixed(2);
+            document.getElementById('network_recv').textContent = data.network_recv.toFixed(2);
+
+            // 更新进程信息
+            const processList = document.getElementById('process_list');
+            processList.innerHTML = ''; // 清空旧的进程列表
+            data.processes.forEach(proc => {
+                const processDiv = document.createElement('div');
+                processDiv.className = 'process';
+                processDiv.innerHTML = `
+                        <p>PID: ${proc.pid}</p>
+                        <p>Name: ${proc.name}</p>
+                        <p>User: ${proc.username}</p>
+                        <p>CPU Usage: ${proc.cpu_percent.toFixed(2) / 100}%</p>
+                        <p>Memory Usage: ${proc.memory_percent.toFixed(2)}%</p>
+                    `;
+                processList.appendChild(processDiv);
+            });
+        } catch (error) {
+            console.error('Error fetching system sys-info:', error);
+        }
+    }
+
+    // 每隔 5 秒更新一次系统信息
+    setInterval(updateSystemInfo, 5000);
+
+    // 初始化时立即更新一次
+    updateSystemInfo();
+
+</script>
+</body>
+
+</html>

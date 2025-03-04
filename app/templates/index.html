@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft 账户</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="/index_style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/lib/fontawesome.css">
+    <link rel="stylesheet" href="/lib/solid.css">
+    <script src="/marked.min.js"></script>
+    <script src="/index_script.js"></script>
+    <script src="/lib/md5.js"></script>
+    <link rel="stylesheet" href="/panel_style.css">
+
+
+</head>
+
+<body>
+
+<div class="header">
+    <div>Microsoft 账户</div>
+    <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
+</div>
+
+
+<div class="container">
+
+    <div class="sidebar" id="sidebar">
+
+        <div class="avatar-container">
+            <div class="avatar-ring">
+                <div id="avatar" class="avatar"></div>
+            </div>
+
+            <div class="text-info" id="text-info">
+                <div class="nickname"></div>
+                <div class="email"></div>
+            </div>
+        </div>
+
+        <button class="nav-button" data-path="/control-panel"><i class="fa-solid fa-house"> </i>控制面板</button>
+<!--        <button class="nav-button"><i class="fa-solid fa-comment"> </i>小黑屋</button>-->
+        <button class="nav-button" data-path="/accounts"><i class="fa-solid fa-user"> </i>账户</button>
+        <!--        <button class="nav-button" data-path="/subscriptions">订阅</button>-->
+        <button class="nav-button" id="nav-button-server-log" data-path="/server-log"><i class="fa-solid fa-cloud"> </i>服务与管理</button>
+        <button class="nav-button" data-path="/help"><i class="fa-solid fa-handshake-angle"> </i>帮助</button>
+        <button class="nav-button" id="nav-button-logout"><i class="fa-solid fa-person-walking-arrow-right"></i>注销
+        </button>
+
+    </div>
+
+    <div class="content" id="content"></div>
+
+</div>
+
+
+</body>
+
+</html>

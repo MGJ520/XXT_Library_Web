@@ -1,0 +1,565 @@
+.show_no_thing {
+    margin-top: 60px;
+    display: none;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+/* 在 login_style.css 文件中添加以下样式 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.show_no_thing {
+    animation-name: fadeIn;
+    animation-duration: 1s; /* 动画持续时间 */
+}
+.show_no_thing i {
+    color: #666;
+    font-size: 80px;
+    font-weight: 900; /* 确保图标使用正确的字体权重 */
+}
+
+.show_no_thing p {
+    color: #666;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 900; /* 确保图标使用正确的字体权重 */
+}
+
+.card.user-card .btn-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+
+.card {
+    border-radius: 10px;
+    animation-name: fadeIn;
+    animation-duration: 0.5s; /* 动画持续时间 */
+}
+
+
+.btn-box button {
+    font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #d9d9d9;
+    border: #006fc9;
+    border-radius: 3px;
+    color: #4b4a4a;
+    font-weight: bold;
+    height: 40px;
+    font-size: 16px
+}
+
+.user-info {
+    width: 80%;
+    margin: 30px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.info {
+    width: 100%;
+    min-width: 60px;
+    margin: 3px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.simple {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.simple-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.simple-1 p {
+    font-weight: bold;
+    margin-left: 10px;
+    white-space: nowrap; /* 防止文本换行 */
+}
+
+.simple p {
+    font-weight: bold;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+
+.card p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.user-info p i {
+    min-width: 20px;
+}
+
+.overview {
+    margin: 30px;
+    width: 80%;
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.status {
+    width: 100%;
+    height: 50px;
+    align-content: center;
+    margin: 10px;
+    align-self: center;
+    background-color: rgba(0, 112, 13, 0.6);
+    border-radius: 5px;
+    display: flex; /* 使用flex布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+.status-text {
+    align-self: center;
+    color: white;
+}
+
+/* 弹窗样式 */
+.modal {
+    display: none; /* 默认隐藏 */
+    position: fixed; /* 固定位置 */
+    z-index: 1; /* 确保在最顶层 */
+    left: 0;
+    top: 0;
+    width: 100%; /* 全宽 */
+    height: 100%; /* 全高 */
+    overflow: auto; /* 如果内容过长，允许滚动 */
+    background-color: rgb(0, 0, 0); /* 背景颜色 */
+    background-color: rgba(0, 0, 0, 0.4); /* 半透明背景 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+/* 弹窗内容样式 */
+.modal-content {
+    display: flex;
+    max-width: 580px;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    flex-direction: column;
+    align-self: center;
+
+}
+
+.input-group-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-group-add {
+    display: grid;
+}
+
+
+.password-toggle:hover {
+    color: #006fc9; /* 鼠标悬浮时的颜色 */
+    font-weight: bold;
+}
+
+
+/* 关闭按钮样式 */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.time-picker {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.time-slot {
+    max-width: 80px;
+    min-height: 40px;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 12px; /* 缩小字体 */
+    width: calc(30% - 10px); /* 每列的宽度 */
+    display: inline-block; /* 使时间框在一行内排列 */
+    border-radius: 4px;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+.selected {
+    background-color: #006fc9;
+    color: white;
+}
+
+.highlight {
+    background-color: #ccc; /* 暗灰色提示 */
+    color: black;
+    animation: highlightAnimation 0.5s forwards; /* 添加高亮动画 */
+}
+
+@keyframes highlightAnimation {
+    0% {
+        background-color: #bdbdbd;
+    }
+    100% {
+        background-color: #dcdcdc; /* 高亮结束后的背景色 */
+    }
+}
+
+#time-slots {
+    display: flex;
+
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.input-group-add input {
+
+}
+
+.input-group-seat {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.input-group-bottom {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.input-group-bottom button {
+    width: 20px;
+    height: 35px;
+}
+
+/* 删除动画 */
+.shrink-and-fade {
+    animation: shrinkAndFade 0.3s ease-in-out forwards;
+}
+
+@keyframes shrinkAndFade {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+.slide-out-right {
+    animation: slideOutRight 0.3s ease-in-out forwards;
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+
+ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    li {
+        margin: 10px;
+        position: relative;
+        min-width: 240px;
+    }
+
+}
+
+ul label {
+    font-weight: bold;
+}
+
+.show_server_info {
+    margin: 13px;
+}
+
+.show_server_info p {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+    input[type='checkbox'] {
+        --active: #0063b3;
+        --active-inner: #fff;
+        --focus: 2px rgba(39, 94, 254, .3);
+        --border: #9f9f9f;
+        --border-hover: #6e6e6e;
+        --background: #fff;
+        --disabled: #F6F8FF;
+        --disabled-inner: #E1E6F9;
+
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        height: 21px;
+        outline: none;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        margin: 0;
+        cursor: pointer;
+        border: 1px solid var(--bc, var(--border));
+        background: var(--b, var(--background));
+        transition: background .3s, border-color .3s, box-shadow .2s;
+
+        &:after {
+            content: '';
+            display: block;
+            left: 0;
+            top: 0;
+            position: absolute;
+            transition: transform var(--d-t, .3s) var(--d-t-e, ease), opacity var(--d-o, .2s);
+        }
+
+        &:checked {
+            --b: var(--active);
+            --bc: var(--active);
+            --d-o: .3s;
+            --d-t: .6s;
+            --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
+        }
+
+        &:disabled {
+            --b: var(--disabled);
+            cursor: not-allowed;
+            opacity: .9;
+
+            &:checked {
+                --b: var(--disabled-inner);
+                --bc: var(--border);
+            }
+
+            & + label {
+                cursor: not-allowed;
+            }
+        }
+
+        &:hover {
+            &:not(:checked) {
+                &:not(:disabled) {
+                    --bc: var(--border-hover);
+                }
+            }
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 var(--focus);
+        }
+
+        &:not(.switch) {
+            width: 21px;
+
+            &:after {
+                opacity: var(--o, 0);
+            }
+
+            &:checked {
+                --o: 1;
+            }
+        }
+
+        & + label {
+            font-size: 14px;
+            line-height: 21px;
+            display: inline-block;
+            vertical-align: top;
+            cursor: pointer;
+            margin-left: 4px;
+        }
+    }
+
+    input[type='checkbox'] {
+        &:not(.switch) {
+            border-radius: 7px;
+
+            &:after {
+                width: 5px;
+                height: 9px;
+                border: 2px solid var(--active-inner);
+                border-top: 0;
+                border-left: 0;
+                left: 7px;
+                top: 4px;
+                transform: rotate(var(--r, 20deg));
+            }
+
+            &:checked {
+                --r: 43deg;
+            }
+        }
+
+        &.switch {
+            width: 38px;
+            border-radius: 11px;
+
+            &:after {
+                left: 2px;
+                top: 2px;
+                border-radius: 50%;
+                width: 15px;
+                height: 15px;
+                background: var(--ab, var(--border));
+                transform: translateX(var(--x, 0));
+            }
+
+            &:checked {
+                --ab: var(--active-inner);
+                --x: 17px;
+            }
+
+            &:disabled {
+                &:not(:checked) {
+                    &:after {
+                        opacity: .6;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .card.user-card .btn-box {
+        flex-wrap: wrap;
+    }
+
+    input {
+        margin: 0;
+    }
+
+    .modal-content button {
+        border-radius: 0;
+    }
+
+    .overview {
+        /*flex-direction: column-reverse;*/
+        align-items: flex-start;
+        margin-bottom: 5px;
+    }
+
+    .info {
+        justify-content: space-between;
+    }
+
+    .user-info {
+        margin-top: 0;
+    }
+
+    .status {
+        width: 100%;
+        margin: 2px;
+    }
+
+    .simple {
+        font-size: 15px;
+        margin: 3px;
+    }
+
+    .simple-1 i {
+        visibility: hidden;
+        width: 0;
+
+    }
+
+    .info-text {
+        font-size: 15px;
+    }
+
+    .add_button {
+        height: 50%;
+        width: 20%;
+    }
+
+    .modal-content {
+
+        width: 85%;
+    }
+
+    #time-slots {
+        width: auto;
+    }
+
+    .time-slot {
+        max-width: 55px;
+        min-height: 20px;
+
+        margin: 2px;
+        border-radius: 4px;
+    }
+
+    ul {
+        flex-wrap: wrap;
+        justify-content: normal;
+    }
+
+}

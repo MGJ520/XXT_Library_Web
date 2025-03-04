@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转圆圈加载动画（单条弧线，长度变化）</title>
+    <style>
+        /* 定义旋转动画，带速度变化和弧线长度变化 */
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+                border-width: 5px 5px 5px 5px; /* 初始时完整圆 */
+                animation-timing-function: ease-in;
+            }
+            50% {
+                transform: rotate(180deg);
+                border-width: 5px 5px 0 5px; /* 中间时弧线缩短 */
+                animation-timing-function: ease-out;
+            }
+            100% {
+                transform: rotate(360deg);
+                border-width: 5px 5px 5px 5px; /* 最终恢复完整圆 */
+            }
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid transparent;
+            border-top-color: #007bff; /* 只显示顶部边框 */
+            border-radius: 50%;
+            animation: rotate 1.5s infinite; /* 动画持续时间 */
+            margin: 100px auto; /* 居中显示 */
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Gauge Dashboard</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .gauge-container {
+            position: relative;
+            width: 300px;
+            height: 200px;
+        }
+        .gauge-svg {
+            width: 100%;
+            height: auto;
+        }
+        .gauge-path {
+            fill: none;
+            stroke-width: 30px;
+            transition: stroke-dashoffset 0.5s ease-in-out;
+        }
+        .color-segment-red {
+            stroke: red;
+        }
+        .color-segment-yellow {
+            stroke: yellow;
+        }
+        .color-segment-green {
+            stroke: green;
+        }
+        .gauge-pointer {
+            stroke: black;
+            stroke-width: 4px;
+            transform-origin: center;
+            transition: transform 0.5s ease-in-out;
+        }
+        .gauge-value,
+        .gauge-label {
+            position: absolute;
+            text-align: center;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .gauge-value {
+            top: 40%;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .gauge-label {
+            bottom: 20%;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gauge-container">
+        <svg class="gauge-svg" viewBox="0 0 600 400">
+            <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:red;stop-opacity:1" />
+                    <stop offset="33%" style="stop-color:yellow;stop-opacity:1" />
+                    <stop offset="66%" style="stop-color:green;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <circle cx="300" cy="200" r="150" class="gauge-path" />
+            <line class="gauge-pointer" x1="300" y1="200" x2="300" y2="180" />
+        </svg>
+        <div class="gauge-value">677</div>
+        <div class="gauge-label">Good</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+label {
+    white-space: nowrap; /* 防止文字换行 */
+}
+
+.card.user-card.info-show {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.user-card-item {
+    padding: 10px 20px;
+    border-bottom: 1px solid rgb(242, 242, 242);
+}
+
+@media (max-width: 768px) {
+    .user-card-item {
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid rgb(242, 242, 242);
+    }
+
+    label {
+        min-width: 70px;
+    }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>help</title>
+    <script src="/marked.min.js"></script>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/lib/github-markdown-light.min.css">
+    <style>
+        .markdown-body {
+            background-color: #f2f2f2;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="m" class="markdown-body"></div>
+
+<script>
+    fetch('/static/makedown/help.md')
+        .then(response => response.text())
+        .then(markdown => {
+            document.getElementById('m').innerHTML = marked.parse(markdown, {mangle: false});
+
+        })
+</script>
+
+
+</body>
+
+
+</html>
