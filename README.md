@@ -128,7 +128,12 @@ platform_email           VARCHAR(255)     COMMENT '用户邮箱地址',
                 permission_level      INT          COMMENT '用户的权限级别'
 ```
 
-> 因为开发时间不够，有想法开发的同学们，可以提交贡献
+> 因为开发时间不够，有想法开发的同学们，可以提交贡献：
+
+> 获取座位分布位置api :https://office.chaoxing.com/data/apps/seat/seatgrid/roomid?roomId=8661
+>
+> 条件查询获取座位api:https://reserve.chaoxing.com/data/apps/seat/getseatinfo?deptIdEnc=&startTime=20%3A00&endTime=21%3A00&firstLevelName=%E7%AC%AC%E4%BA%8C%E5%9B%BE%E4%B9%A6%E9%A6%86
+
 ## 结语
 
 图书馆座位预约系统，如同知识的灯塔，照亮您的求学之路。我们诚挚邀请您使用本系统，也希望您能为我们提出宝贵的意见和建议。让我们共同努力，为知识的传播和文化的繁荣添砖加瓦。
