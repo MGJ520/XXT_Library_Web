@@ -11,17 +11,22 @@ Flask为血脉，我们为您开启了一扇通往知识殿堂的便捷之门。
 Flask作为后端支撑，简洁而不失优雅，高效而又稳定。
 
 ## 预览项目
+
+
 **1.登录页面**
-![登录页面](makedown/img.png)
+
 ---
+![登录页面](makedown/img.png)
 
 **2.主页页面**
-![主页](makedown/img1.png)
 
 ---
-**3.手机页面**
-![手机页面](makedown/img2.png)
+![主页](makedown/img1.png)
 
+**3.手机页面**
+
+---
+![手机页面](makedown/img2.png)
 
 
 ## 功能亮点
