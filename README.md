@@ -80,6 +80,12 @@ GPLv3 是一种“传染性”开源协议，要求任何基于本项目的代�
    2.Room_data
    3.抢座时间
    ```
+   
+**里面的Room data通过下面api获取:**
+> https://reserve.chaoxing.com/data/apps/seat/room/list?time=&cpage=1&pageSize=100&day=2025-03-04
+
+同时里面的数据你需要自己找出来
+
 4. 运行项目：
    ```bash
    python run.py
